@@ -1,15 +1,6 @@
-<<<<<<< HEAD
 matplotlib==3.7.1
 numpy==1.24.3
 seaborn==0.12.2
 scikit-learn==1.2.2
 tensorflow==2.14.0
 tensorflowjs==4.6.0
-=======
-```
-opencv-python
-tensorflow
-numpy
-matplotlib
-```
->>>>>>> b92730a028da567adefa57bfe772e2749536815c
