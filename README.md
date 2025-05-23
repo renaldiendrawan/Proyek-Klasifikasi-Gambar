@@ -1,58 +1,80 @@
 # Image Classification with CIFAR-10
 
-Proyek ini bertujuan untuk membangun sistem klasifikasi gambar menggunakan dataset CIFAR-10. Model dikembangkan menggunakan arsitektur deep learning berbasis **TensorFlow dan Keras Sequential API**, dengan **penambahan layer Conv2D dan MaxPooling2D secara eksplisit**, sesuai dengan standar pembelajaran pada program Machine Learning Engineer - Dicoding x DBS Foundation (Cohort University 2025).
+Proyek ini membangun sistem klasifikasi gambar menggunakan dataset **CIFAR-10**, dengan model deep learning berbasis **TensorFlow** dan **Keras Sequential API**. Arsitektur model mencakup beberapa layer **Conv2D** dan **MaxPooling2D**, sesuai standar program Machine Learning Engineer - Dicoding x DBS Foundation (Cohort University 2025).
 
 ## Dataset
 
-Dataset yang digunakan adalah [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html), yang terdiri dari 60.000 gambar RGB berukuran 32x32 piksel yang terbagi ke dalam 10 kelas berbeda:
-- Airplane
-- Automobile
-- Bird
-- Cat
-- Deer
-- Dog
-- Frog
-- Horse
-- Ship
-- Truck
+Dataset yang digunakan adalah [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html), yang terdiri dari 60.000 gambar RGB berukuran 32x32 piksel dalam 10 kelas:
 
-Data dibagi menjadi 3 bagian: **train set, validation set, dan test set**, guna mendukung proses pelatihan dan evaluasi model yang efektif.
+* Airplane
+* Automobile
+* Bird
+* Cat
+* Deer
+* Dog
+* Frog
+* Horse
+* Ship
+* Truck
+
+Data dibagi menjadi tiga bagian:
+
+* **Training set**: 45.000 gambar
+* **Validation set**: 5.000 gambar
+* **Test set**: 10.000 gambar
 
 ## Arsitektur Model
 
-Model dibangun menggunakan arsitektur **Keras Sequential** yang terdiri dari:
-- Beberapa layer Conv2D dan MaxPooling2D
-- Flatten dan Dense layer
-- Output layer dengan softmax activation untuk klasifikasi 10 kelas
+Model dikembangkan menggunakan **Keras Sequential API** dengan komponen berikut:
 
-Model ini dilatih menggunakan **loss function `categorical_crossentropy`** dan **optimizer `adam`**.
+* 3 blok Conv2D (ReLU) + MaxPooling2D
+* Flatten layer
+* Dense layer (512 unit, ReLU)
+* Output layer (Dense 10 unit, softmax)
 
-## Cara Menjalankan Proyek
+Model dikompilasi menggunakan:
 
-1. Pastikan Anda telah menginstal seluruh dependensi dari file `requirements.txt`.
-2. Buka file `Proyek_Klasifikasi_Gambar.ipynb` di Jupyter Notebook atau Google Colab.
-3. Jalankan seluruh sel secara berurutan untuk:
-   - Memuat dan memproses dataset
-   - Melatih model klasifikasi
-   - Mengevaluasi akurasi model pada validation dan test set
-   - Menampilkan confusion matrix
-   - Menyimpan model dalam format `.h5` dan `.json`, atau mengekspornya ke TensorFlow.js (opsional)
+* **Loss function**: `categorical_crossentropy`
+* **Optimizer**: `adam`
+* **Metrics**: `accuracy`
+
+## Pelatihan dan Evaluasi
+
+Notebook mencakup:
+
+* Visualisasi data (jumlah data per kelas)
+* Preprocessing: normalisasi, one-hot encoding
+* Pelatihan model dengan `ModelCheckpoint` dan `EarlyStopping`
+* Evaluasi akurasi pada validation dan test set
+* Plot confusion matrix untuk hasil klasifikasi
+* Penyimpanan model dalam `.h5` dan `.json`
+
+## Cara Menjalankan
+
+1. Instal dependensi dengan:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Jalankan `Proyek_Klasifikasi_Gambar.ipynb` di Jupyter Notebook atau Google Colab.
+3. Eksekusi sel notebook secara berurutan.
 
 ## Struktur Proyek
 
-- `Proyek_Klasifikasi_Gambar.ipynb` — Notebook utama berisi seluruh proses klasifikasi gambar
-- `requirements.txt` — Daftar dependensi Python untuk menjalankan proyek
-- `README.md` — Dokumentasi dan petunjuk penggunaan proyek
+* `Proyek_Klasifikasi_Gambar.ipynb`: Notebook utama proyek
+* `requirements.txt`: Daftar library yang diperlukan
+* `README.md`: Dokumentasi proyek
 
 ## Persyaratan Sistem
 
-Library utama yang digunakan:
-- TensorFlow 2.14.0
-- scikit-learn 1.2.2
-- matplotlib 3.7.1
-- seaborn 0.12.2
-- numpy 1.24.3
+Library utama:
+
+* TensorFlow 2.14.0
+* scikit-learn 1.2.2
+* matplotlib 3.7.1
+* seaborn 0.12.2
+* numpy 1.24.3
 
 ## Kontributor
 
-- Renaldi Endrawan
+* Renaldi Endrawan
